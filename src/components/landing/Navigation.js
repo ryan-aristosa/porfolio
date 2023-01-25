@@ -3,22 +3,15 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import logoReversed from 'assets/logo-reversed.png';
 import 'styles/landing/Navigation.scss';
 
-function Navigation() {
-	const NAV_OBJ = {
-		'home': 'fa-solid fa-house',
-		'about': 'fa-solid fa-address-card',
-		'experience': 'fa-solid fa-code',
-		'project': 'fa-solid fa-diagram-project'
-	};
-
-	const NAV_LIST = Object.keys(NAV_OBJ).map((key) => (
-		<li className='position-relative' key={key}>
-			<a 
-				href={'#' + (key !== 'home' ? key : '')} 
+function Navigation(props) {
+	const NAV_LIST = props.navigation[0].map((data) => (
+		<li className='position-relative' key={data.id}>
+			<a
+				href={'#' + (data.text !== 'home' ? data.text : '')}
 				className='c-eb text-decoration-none mx-3'
 			>
-				<FontAwesomeIcon icon={NAV_OBJ[key]} />
-				&ensp;{key.charAt(0).toUpperCase() + key.slice(1)}
+				<FontAwesomeIcon icon={data.icon} />
+				&ensp;{data.text.charAt(0).toUpperCase() + data.text.slice(1)}
 			</a>
 		</li>
 	));
@@ -41,7 +34,7 @@ function Navigation() {
 		});
 	});
 
-	return(
+	return (
 		<nav className='bc-dcb position-fixed w-100'>
 			<div className='mw-1200 h-100 w-100 my-0 mx-auto d-flex'>
 				<div className='logo-container h-100'>
