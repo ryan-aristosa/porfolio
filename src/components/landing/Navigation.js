@@ -4,7 +4,7 @@ import logoReversed from 'assets/logo-reversed.png';
 import 'styles/landing/Navigation.scss';
 
 function Navigation(props) {
-	const NAV_LIST = props.navigation[0].map((data) => (
+	const NAV_LIST = props.navigation.map((data) => (
 		<li className='position-relative' key={data.id}>
 			<a
 				href={'#' + (data.text !== 'home' ? data.text : '')}

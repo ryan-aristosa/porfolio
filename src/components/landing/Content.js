@@ -101,10 +101,10 @@ const PROJECT_OBJ = [
 	]
 ]
 
-function Content() {
+function Content(props) {
 	return (
 		<div className='content'>
-			<Home />
+			<Home home={props.home} />
 			<About />
 			<Experience timelineObj={TIMELINE_OBJ} />
 			<Project projectObj={PROJECT_OBJ} />
