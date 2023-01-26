@@ -1,5 +1,4 @@
-import UseAxios from 'apis/UseAxios';
-import { getAllNavigationData, getAllHomeData } from 'apis/AxiosCreate';
+import { getData } from 'apis/CreateAxios';
 import Content from 'components/landing/Content';
 import Footer from 'components/landing/Footer';
 import GitHubModal from 'components/landing/GitHubModal';
@@ -10,26 +9,9 @@ import 'styles/App.scss';
 
 function App() {
 	let content;
-	const navigation = UseAxios({
-		axiosInstance: getAllNavigationData,
-		method: 'GET',
-		url: '',
-		requestConfig: {
-			headers: {
-				'Content-Language': 'en-US'
-			}
-		}
-	});
-	const home = UseAxios({
-		axiosInstance: getAllHomeData,
-		method: 'GET',
-		url: '',
-		requestConfig: {
-			headers: {
-				'Content-Language': 'en-US'
-			}
-		}
-	});
+	const navigation = getData('/navigation');
+	const home = getData('/home');
+	const about = getData('/about');
 
 	if (navigation[2]) {
 		content = <Loading />
@@ -40,7 +22,7 @@ function App() {
 	else {
 		content = <div>
 			<Navigation navigation={navigation[0]} />
-			<Content home={home[0]} />
+			<Content home={home[0]} about={about[0]} />
 			<Footer />
 			<GitHubModal />
 		</div>

@@ -105,7 +105,7 @@ function Content(props) {
 	return (
 		<div className='content'>
 			<Home home={props.home} />
-			<About />
+			<About about={props.about} />
 			<Experience timelineObj={TIMELINE_OBJ} />
 			<Project projectObj={PROJECT_OBJ} />
 		</div>
