@@ -1,5 +1,5 @@
 import UseAxios from 'apis/UseAxios';
-import { getAllNavigationTexts, getAllHomeTexts } from 'apis/AxiosCreate';
+import { getAllNavigationData, getAllHomeData } from 'apis/AxiosCreate';
 import Content from 'components/landing/Content';
 import Footer from 'components/landing/Footer';
 import GitHubModal from 'components/landing/GitHubModal';
@@ -11,7 +11,7 @@ import 'styles/App.scss';
 function App() {
 	let content;
 	const navigation = UseAxios({
-		axiosInstance: getAllNavigationTexts,
+		axiosInstance: getAllNavigationData,
 		method: 'GET',
 		url: '',
 		requestConfig: {
@@ -21,7 +21,7 @@ function App() {
 		}
 	});
 	const home = UseAxios({
-		axiosInstance: getAllHomeTexts,
+		axiosInstance: getAllHomeData,
 		method: 'GET',
 		url: '',
 		requestConfig: {

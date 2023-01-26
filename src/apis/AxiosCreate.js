@@ -2,7 +2,7 @@ import axios from 'axios';
 
 const BASE_URL = 'http://localhost:8080';
 
-export const getAllNavigationTexts = axios.create({
+export const getAllNavigationData = axios.create({
 	baseURL: BASE_URL + '/navigation',
 	headers: {
 		'Content-Type': 'application/json',
@@ -10,7 +10,7 @@ export const getAllNavigationTexts = axios.create({
 	}
 });
 
-export const getAllHomeTexts = axios.create({
+export const getAllHomeData = axios.create({
 	baseURL: BASE_URL + '/home',
 	headers: {
 		'Content-Type': 'application/json',
