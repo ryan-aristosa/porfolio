@@ -7,7 +7,6 @@ import 'styles/landing/Content.scss';
 // Experience
 const TIMELINE_OBJ = [
 	[
-		'left',
 		'October 2022 - Present',
 		['Jr. Software Engineer', 'Cognizant Softvision'],
 		[
@@ -21,7 +20,6 @@ const TIMELINE_OBJ = [
 		]
 	],
 	[
-		'right',
 		'2018 - August 2022 (College)',
 		[
 			'Bachelor of Science in Information Technology',

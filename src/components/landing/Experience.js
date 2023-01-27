@@ -3,12 +3,12 @@ import TechStackTag from 'components/landing/TechStackTag';
 import 'styles/landing/Experience.scss';
 
 function Experience(props) {
-	const TIME_CARD = (props.timelineObj).map(([side, duration, details, techStack]) => (
+	const TIME_CARD = (props.timelineObj).map(([duration, details, techStack], index) => (
 		<ScrollAnimation
 			animateIn='animate__fadeInUp'
 			animateOnce={true}
 			delay={500}
-			className={'time-card position-relative ' + side}
+			className={'time-card position-relative ' + ((index + 1) % 2 === 0 ? 'right' : 'left') }
 			key={duration}
 		>
 			<div className='details position-relative'>
