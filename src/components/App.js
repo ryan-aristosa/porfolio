@@ -12,6 +12,7 @@ function App() {
 	const navigation = getData('/navigation');
 	const home = getData('/home');
 	const about = getData('/about');
+	const experience = getData('/experience');
 
 	if (navigation[2]) {
 		content = <Loading />
@@ -22,7 +23,7 @@ function App() {
 	else {
 		content = <div>
 			<Navigation navigation={navigation[0]} />
-			<Content home={home[0]} about={about[0]} />
+			<Content home={home[0]} about={about[0]} experience={experience[0]} />
 			<Footer />
 			<GitHubModal />
 		</div>

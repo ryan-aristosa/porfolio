@@ -104,7 +104,7 @@ function Content(props) {
 		<div className='content'>
 			<Home home={props.home} />
 			<About about={props.about} />
-			<Experience timelineObj={TIMELINE_OBJ} />
+			<Experience experience={props.experience} />
 			<Project projectObj={PROJECT_OBJ} />
 		</div>
 	);
