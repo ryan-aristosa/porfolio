@@ -4,14 +4,16 @@ import logoReversed from 'assets/logo-reversed.png';
 import 'styles/landing/Navigation.scss';
 
 function Navigation(props) {
-	const NAV_LIST = props.navigation.map((data) => (
-		<li className='position-relative' key={data.id}>
+	const navigation = props.navigation;
+
+	const navList = Object.keys(navigation).map(key => (
+		<li className='position-relative' key={key}>
 			<a
-				href={'#' + (data.text !== 'home' ? data.text : '')}
+				href={'#' + (navigation[key].text !== 'home' ? navigation[key].text : '')}
 				className='c-eb text-decoration-none mx-3'
 			>
-				<FontAwesomeIcon icon={data.icon} />
-				&ensp;{data.text.charAt(0).toUpperCase() + data.text.slice(1)}
+				<FontAwesomeIcon icon={navigation[key].icon} />
+				&ensp;{navigation[key].text.charAt(0).toUpperCase() + navigation[key].text.slice(1)}
 			</a>
 		</li>
 	));
@@ -48,7 +50,7 @@ function Navigation(props) {
 					<div className='line3'></div>
 				</div>
 				<ul className='list-unstyled h-100 w-100 d-flex align-items-center me-3'>
-					{NAV_LIST}
+					{navList}
 				</ul>
 			</div>
 		</nav>

@@ -3,7 +3,7 @@ import TechStackTag from 'components/landing/TechStackTag';
 import 'styles/landing/Project.scss';
 
 function Project(props) {
-	const PROJECT = props.projectObj.map(([title, detail, contribution, techStack, openSource]) => (
+	const project = props.projectObj.map(([title, detail, contribution, techStack, openSource]) => (
 		<div className='card-container d-flex' key={title}>
 			<ScrollAnimation
 				animateIn='animate__fadeIn'
@@ -46,7 +46,7 @@ function Project(props) {
 			<div className='mw-1200 my-0 mx-auto px-3'>
 				<h3 className='section-title text-center'>Project</h3>
 				<div className='d-flex justify-content-center flex-wrap mt-5 w-100'>
-					{PROJECT}
+					{project}
 				</div>
 			</div>
 		</div>

@@ -7,7 +7,6 @@ function Footer() {
 		['mailto: ryan.aristosa@softvision.com', 'Email', 'fa-solid fa-envelope']
 	];
 
-
 	return (
 		<footer className='bc-dcb c-eb text-center py-5'>
 			<div className='links d-flex justify-content-center'>

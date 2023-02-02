@@ -3,13 +3,14 @@ import TechStackTag from 'components/landing/TechStackTag';
 import 'styles/landing/Experience.scss';
 
 function Experience(props) {
+	const experience = props.experience;
+
 	function toSnakeDash(str) {
 		const concatStr = 'color-'.concat(str.replace('#', ' Sharp').replace(' ', '-'));
 		return concatStr && concatStr.match(/./g).map(x => x.toLowerCase()).join('');
 	}
 
-	const experience = props.experience;
-	const TIME_CARD = Object.keys(experience).map(eKey => (
+	const timeCard = Object.keys(experience).map(eKey => (
 		<ScrollAnimation
 			animateIn='animate__fadeInUp'
 			animateOnce={true}
@@ -91,7 +92,7 @@ function Experience(props) {
 			<div className='mw-1200 my-0 mx-auto px-3'>
 				<h3 className='section-title text-center'>Experience</h3>
 				<div className='timeline mx-auto mt-5 position-relative'>
-					{TIME_CARD}
+					{timeCard}
 				</div>
 			</div>
 		</div>
