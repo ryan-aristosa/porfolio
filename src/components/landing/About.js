@@ -9,19 +9,19 @@ function About(props) {
 	const [heartIcon, setHeartIcon] = useState('fa-regular fa-heart');
 	const [randomNum, setRandomNum] = useState(Math.floor(Math.random() * 99999) + 10000);
 
-	// useEffect(() => {
-	// 	const HEART = document.querySelector('.heart');
-	// 	document.getElementById('numberOfHearts').innerHTML = randomNum;
+	useEffect(() => {
+		const HEART = document.querySelector('.heart');
+		document.getElementById('numberOfHearts').innerHTML = randomNum;
 
-	// 	HEART.addEventListener('click', () => {
-	// 		if (flag) {
-	// 			setRandomNum(randomNum + 1);
-	// 			document.getElementById('heart-icon').style.color = 'red';
-	// 			setHeartIcon('fa-solid fa-heart');
-	// 			setFlag(false);
-	// 		}
-	// 	});
-	// });
+		HEART.addEventListener('click', () => {
+			if (flag) {
+				setRandomNum(randomNum + 1);
+				document.getElementById('heart-icon').style.color = 'red';
+				setHeartIcon('fa-solid fa-heart');
+				setFlag(false);
+			}
+		});
+	});
 
 	const aboutContent = props.about.contents && Object.keys(props.about.contents).map(key => (
 		<p className='mt-3 mb-0 mx-0 p-0' key={key}>
