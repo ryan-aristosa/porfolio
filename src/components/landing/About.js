@@ -26,7 +26,7 @@ function About(props) {
 	return (
 		<div className='about-me smt-64' id='about'>
 			<div className='mw-1200 my-0 mx-auto px-3'>
-				<h3 className='section-title text-center'>{props.about.title}</h3>
+				<h3 className='section-title text-center'>About</h3>
 				<ScrollAnimation
 					animateIn='animate__fadeIn'
 					animateOnce={true}
@@ -47,9 +47,14 @@ function About(props) {
 					</div>
 					<div className='mt-4'>
 						{
-							props.about.aboutContentList.map((data) => (
-								<p className='mt-3 mb-0 mx-0 p-0' key={data.id}>{data.content}</p>
-							))
+							// props.about.contents.map((data) => (
+							// 	<p className='mt-3 mb-0 mx-0 p-0' key={data.id}>{data.content}</p>
+							// ))
+							// Object.keys(props.about.contents).map(key => (
+							// 	<p className='mt-3 mb-0 mx-0 p-0' key={key}>
+							// 		{props.about.contents[key].content}
+							// 	</p>
+							// ))
 						}
 					</div>
 					<div className='bottom mt-4 d-flex position-relative'>

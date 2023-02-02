@@ -2,43 +2,6 @@ import About from 'components/landing/About';
 import Experience from 'components/landing/Experience';
 import Home from 'components/landing/Home';
 import Project from 'components/landing/Project';
-import 'styles/landing/Content.scss';
-
-// Experience
-const TIMELINE_OBJ = [
-	[
-		'October 2022 - Present',
-		['Jr. Software Engineer', 'Cognizant Softvision'],
-		[
-			['Java', 'color-java', 'c-eb'],
-			['Spring Boot', 'color-spring-boot', 'c-eb'],
-			['Hibernate', 'color-hibernate', 'c-eb'],
-			['Docker', 'color-docker', 'c-eb'],
-			['PostgreSQL', 'color-postgresql', 'c-eb'],
-			['React', 'color-react', 'c-dcb'],
-			['Bootstrap', 'color-bootstrap', 'c-eb']
-		]
-	],
-	[
-		'2018 - August 2022 (College)',
-		[
-			'Bachelor of Science in Information Technology',
-			'STI College Pasay-EDSA',
-			'Magna Cum Laude'
-		],
-		[
-			['Java', 'color-java', 'c-eb'],
-			['Javascript', 'color-javascript', 'c-dcb'],
-			['HTML', 'color-html', 'c-eb'],
-			['CSS', 'color-css', 'c-eb'],
-			['C#', 'color-c-sharp', 'c-eb'],
-			['Kotlin', 'color-kotlin', 'c-eb'],
-			['Bootstrap', 'color-bootstrap', 'c-eb'],
-			['PHP', 'color-php', 'c-eb'],
-			['Python', 'color-python', 'c-dcb']
-		]
-	]
-];
 
 // Project
 const PROJECT_OBJ = [
@@ -101,7 +64,7 @@ const PROJECT_OBJ = [
 
 function Content(props) {
 	return (
-		<div className='content'>
+		<div className='content' style={{ paddingTop: '64px' }}>
 			<Home home={props.home} />
 			<About about={props.about} />
 			<Experience experience={props.experience} />
