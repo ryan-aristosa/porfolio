@@ -39,7 +39,7 @@ const UseAxios = (configObj) => {
 		// eslint-disable-next-line
 	}, [reload]);
 
-	return [response, error, loading, refetch];
+	return { response, error, loading, refetch };
 }
 
 export default UseAxios;

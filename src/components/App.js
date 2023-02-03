@@ -8,22 +8,21 @@ import Loading from 'components/Loading';
 import 'styles/App.scss';
 
 function App() {
-	// [0] response, [1] error, [2] loading, [3] reload
 	const navigation = GetData('/navigation');
 	const home = GetData('/home');
 	const about = GetData('/about');
 	const experience = GetData('/experience');
 
-	if (navigation[2] || home[2] || about[2] || experience[2]) {
+	if (navigation.loading || home.loading  || about.loading  || experience.loading) {
 		return <Loading />
-	} else if (navigation[1] || home[1] || about[1] || experience[1]) {
+	} else if (navigation.error || home.error || about.error || experience.error) {
 		return <Error />
 	}
 
 	return (
 		<div>
-			<Navigation navigation={navigation[0]} />
-			<Content home={home[0]} about={about[0]} experience={experience[0]} />
+			<Navigation navigation={navigation.response} />
+			<Content home={home.response} about={about.response} experience={experience.response} />
 			<Footer />
 			<GitHubModal />
 		</div>

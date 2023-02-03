@@ -1,8 +1,6 @@
 import CreateAxios from 'apis/CreateAxios';
 import UseAxios from 'apis/UseAxios';
 
-const BASE_URL = 'http://localhost:8080';
-
 const GetData = (urlMap) => (
 	UseAxios({
 		axiosInstance: CreateAxios,
