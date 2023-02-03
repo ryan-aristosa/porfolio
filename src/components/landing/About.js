@@ -8,6 +8,7 @@ function About(props) {
 	const [flag, setFlag] = useState(true);
 	const [heartIcon, setHeartIcon] = useState('fa-regular fa-heart');
 	const [randomNum, setRandomNum] = useState(Math.floor(Math.random() * 99999) + 10000);
+	const contentList = props.about.contentList;
 
 	useEffect(() => {
 		const HEART = document.querySelector('.heart');
@@ -23,9 +24,9 @@ function About(props) {
 		});
 	});
 
-	const aboutContent = props.about.contents && Object.keys(props.about.contents).map(key => (
+	const aboutContent = contentList && Object.keys(contentList).map(key => (
 		<p className='mt-3 mb-0 mx-0 p-0' key={key}>
-			{props.about.contents[key].content}
+			{contentList[key].content}
 		</p>
 	))
 
