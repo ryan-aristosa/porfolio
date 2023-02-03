@@ -25,23 +25,21 @@ function Experience(props) {
 				<h6 className='fw-600 text-center mb-4'>{experience[eKey].duration}</h6>
 				<ul className='list-unstyled'>
 					{
-						Object.keys(experience[eKey].descriptions).map(dKey => (
+						Object.keys(experience[eKey].descriptionList).map(dKey => (
 							<li className='mt-2' key={dKey}>
-								{experience[eKey].descriptions[dKey].text}
+								{experience[eKey].descriptionList[dKey].text}
 							</li>
 						))
 					}
 					<li>
 						<div className='p-0 m-0 mt-2'>
 							{
-								Object.keys(experience[eKey].stacks).map(sKey => (
+								Object.keys(experience[eKey].stackList).map(sKey => (
 									<div className='d-inline-block' key={sKey}>
 										<TechStackTag
-											bgColor={
-												toSnakeDash(experience[eKey].stacks[sKey].stackName)
-											}
-											color={experience[eKey].stacks[sKey].colorCode}
-											stack={experience[eKey].stacks[sKey].stackName}
+											stack={experience[eKey].stackList[sKey].stackName}
+											bgColor={experience[eKey].stackList[sKey].primaryColorHex}
+											color={experience[eKey].stackList[sKey].fontColorCode}
 										/>
 									</div>
 								))
