@@ -11,7 +11,6 @@ function Error(props) {
 					/>
 				</div>
 				<h2 className='fw-600 text-center mt-5'>Whooops! Something went wrong.</h2>
-				<h4 className='fw-600 text-center text-danger mt-5'>{props.error}</h4>
 			</div>
 		</div>
 	);

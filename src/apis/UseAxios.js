@@ -2,9 +2,9 @@ import { useState, useEffect } from "react";
 
 const UseAxios = (configObj) => {
 	const {
-		axiosInstance, 
-		method, 
-		url, 
+		axiosInstance,
+		method,
+		url,
 		requestConfig = {}
 	} = configObj;
 
@@ -35,7 +35,7 @@ const UseAxios = (configObj) => {
 		fetchData();
 
 		return () => controller.abort();
-		
+
 		// eslint-disable-next-line
 	}, [reload]);
 

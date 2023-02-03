@@ -1,4 +1,4 @@
-import { useEffect } from 'react';
+import { useEffect, useState } from 'react';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import logoReversed from 'assets/logo-reversed.png';
 import 'styles/landing/Navigation.scss';

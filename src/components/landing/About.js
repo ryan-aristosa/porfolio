@@ -52,17 +52,7 @@ function About(props) {
 						</div>
 					</div>
 					<div className='mt-4'>
-						{
-							aboutContent
-							// props.about.contents.map((data) => (
-							// 	<p className='mt-3 mb-0 mx-0 p-0' key={data.id}>{data.content}</p>
-							// ))
-							// Object.keys(props.about.contents).map(key => (
-							// 	<p className='mt-3 mb-0 mx-0 p-0' key={key}>
-							// 		{props.about.contents[key].content}
-							// 	</p>
-							// ))
-						}
+						{ aboutContent }
 					</div>
 					<div className='bottom mt-4 d-flex position-relative'>
 						<div className='heart text-muted d-flex align-items-center'>
