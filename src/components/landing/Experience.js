@@ -5,11 +5,6 @@ import 'styles/landing/Experience.scss';
 function Experience(props) {
 	const experience = props.experience;
 
-	function toSnakeDash(str) {
-		const concatStr = 'color-'.concat(str.replace('#', ' Sharp').replace(' ', '-'));
-		return concatStr && concatStr.match(/./g).map(x => x.toLowerCase()).join('');
-	}
-
 	const timeCard = Object.keys(experience).map(eKey => (
 		<ScrollAnimation
 			animateIn='animate__fadeInUp'
