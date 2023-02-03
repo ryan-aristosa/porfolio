@@ -12,17 +12,31 @@ function App() {
 	const home = GetData('/home');
 	const about = GetData('/about');
 	const experience = GetData('/experience');
+	const project = GetData('/project');
 
-	if (navigation.loading || home.loading  || about.loading  || experience.loading) {
+	if (
+		navigation.loading
+		|| home.loading
+		|| about.loading
+		|| experience.loading
+		|| project.loading
+	) {
 		return <Loading />
-	} else if (navigation.error || home.error || about.error || experience.error) {
+	} else if (
+		navigation.error || home.error || about.error || experience.error || project.error
+	) {
 		return <Error />
 	}
 
 	return (
 		<div>
 			<Navigation navigation={navigation.response} />
-			<Content home={home.response} about={about.response} experience={experience.response} />
+			<Content
+				home={home.response}
+				about={about.response}
+				experience={experience.response}
+				project={project.response}
+			/>
 			<Footer />
 			<GitHubModal />
 		</div>

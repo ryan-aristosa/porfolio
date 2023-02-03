@@ -5,7 +5,7 @@ import 'styles/landing/Experience.scss';
 function Experience(props) {
 	const experience = props.experience;
 
-	const timeCard = Object.keys(experience).map(eKey => (
+	const timeCard = experience && Object.keys(experience).map(eKey => (
 		<ScrollAnimation
 			animateIn='animate__fadeInUp'
 			animateOnce={true}
