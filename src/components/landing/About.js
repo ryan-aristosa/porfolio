@@ -8,7 +8,8 @@ function About(props) {
 	const [flag, setFlag] = useState(true);
 	const [heartIcon, setHeartIcon] = useState('fa-regular fa-heart');
 	const [randomNum, setRandomNum] = useState(Math.floor(Math.random() * 99999) + 10000);
-	const contentList = props.about.contentList;
+	const about = props.about;
+	const contentList = about.contentList;
 
 	useEffect(() => {
 		const HEART = document.querySelector('.heart');
@@ -45,8 +46,8 @@ function About(props) {
 							<img src={logoReversed} alt='Profile' className='h-100 w-100' />
 						</div>
 						<div className='ms-3'>
-							<p className='fw-600 m-0 p-0'>{props.about.name}</p>
-							<p className='fs-14 m-0 p-0 text-muted'>{props.about.username}</p>
+							<p className='fw-600 m-0 p-0'>{about.name}</p>
+							<p className='fs-14 m-0 p-0 text-muted'>{about.username}</p>
 						</div>
 						<div className='ellipsis position-absolute'>
 							<FontAwesomeIcon icon='fa-solid fa-ellipsis' />
