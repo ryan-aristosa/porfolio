@@ -1,7 +1,6 @@
 import GetData from 'apis/GetData';
 import Content from 'components/landing/Content';
 import Footer from 'components/landing/Footer';
-import GitHubModal from 'components/landing/GitHubModal';
 import Navigation from 'components/landing/Navigation.js';
 import Error from 'components/Error';
 import Loading from 'components/Loading';
@@ -13,6 +12,7 @@ function App() {
 	const about = GetData('/about');
 	const experience = GetData('/experience');
 	const project = GetData('/project');
+	const contacts = GetData('/contact');
 
 	if (
 		navigation.loading
@@ -20,10 +20,16 @@ function App() {
 		|| about.loading
 		|| experience.loading
 		|| project.loading
+		|| contacts.loading
 	) {
 		return <Loading />
 	} else if (
-		navigation.error || home.error || about.error || experience.error || project.error
+		navigation.error
+		|| home.error
+		|| about.error
+		|| experience.error
+		|| project.error
+		|| contacts.error
 	) {
 		return <Error />
 	}
@@ -37,8 +43,7 @@ function App() {
 				experience={experience.response}
 				project={project.response}
 			/>
-			<Footer />
-			<GitHubModal />
+			<Footer contacts={contacts.response} />
 		</div>
 	);
 }

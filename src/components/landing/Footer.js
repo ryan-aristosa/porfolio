@@ -1,38 +1,50 @@
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import 'styles/landing/Footer.scss'
+import { useState } from 'react';
+import ContactModal from 'components/landing/ContactModal';
+import 'styles/landing/Footer.scss';
 
-function Footer() {
-	const SOCIAL_OBJ = [
-		['https://www.linkedin.com/in/rynrsts/', 'LinkedIn', 'fa-brands fa-linkedin-in'],
-		['mailto: ryan.aristosa@softvision.com', 'Email', 'fa-solid fa-envelope']
-	];
+function Footer(props) {
+	const contacts = props.contacts;
+	const [currentContact, setCurrentContact] = useState({});
+
+	const contactAccount = Object.keys(contacts).map(cKey => {
+		const contact = contacts[cKey];
+		const accountList = contact.accountList;
+
+		if (accountList.length === 1) {
+			return <a
+				href={accountList[0].link}
+				aria-label={contact.platform}
+				rel='noreferrer'
+				target='_blank'
+				className='fab-wrapper c-dcb d-flex align-items-center 
+						justify-content-center mx-2'
+				key={cKey}
+			>
+				<FontAwesomeIcon icon={contact.icon} />
+			</a>
+		} else {
+			return <div
+				className='fab-wrapper c-dcb d-flex align-items-center 
+						justify-content-center mx-2'
+				data-bs-toggle='modal'
+				data-bs-target='#contactLink'
+				key={cKey}
+				onClick={doAThing}
+			>
+				<FontAwesomeIcon icon={contact.icon} />
+			</div>
+		}
+
+		function doAThing() {
+			setCurrentContact(contact);
+		}
+	});
 
 	return (
 		<footer className='bc-dcb c-eb text-center py-5'>
 			<div className='links d-flex justify-content-center'>
-				<div
-					className='fab-wrapper c-dcb d-flex align-items-center 
-						justify-content-center mx-2'
-					data-bs-toggle='modal'
-					data-bs-target='#githubLink'
-				>
-					<FontAwesomeIcon icon='fa-brands fa-github' />
-				</div>
-				{
-					SOCIAL_OBJ.map(([href, ariaLabel, icon]) => (
-						<a
-							href={href}
-							aria-label={ariaLabel}
-							rel='noreferrer'
-							target='_blank'
-							className='fab-wrapper c-dcb d-flex align-items-center 
-						justify-content-center mx-2'
-							key={ariaLabel}
-						>
-							<FontAwesomeIcon icon={icon} />
-						</a>
-					))
-				}
+				{contactAccount}
 			</div>
 			<div className='copyright mt-4'>
 				&copy; 2023&nbsp;
@@ -41,6 +53,7 @@ function Footer() {
 				</a>
 				&nbsp;All rights reserved.
 			</div>
+			<ContactModal currentContact={currentContact} />
 		</footer>
 	);
 }
