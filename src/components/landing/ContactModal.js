@@ -1,5 +1,3 @@
-import 'styles/landing/ContactModal.scss';
-
 function ContactModal(props) {
 	const accountList = props.currentContact.accountList;
 
@@ -10,10 +8,11 @@ function ContactModal(props) {
 			target='_blank'
 			className='c-eb btn w-100 h-100 d-flex align-items-center 
 				justify-content-center mt-3'
+			style={{ backgroundColor: '#007BB5' }}
 			key={key}
 		>
 			{accountList[key].accountName}
-		</a>
+		</a >
 	));
 
 	return (

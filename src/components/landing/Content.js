@@ -8,8 +8,8 @@ function Content(props) {
 		<div className='content' style={{ paddingTop: '64px' }}>
 			<Home home={props.home} />
 			<About about={props.about} />
-			<Experience experience={props.experience} />
-			<Project project={props.project} />
+			<Experience experiences={props.experiences} />
+			<Project projects={props.projects} />
 		</div>
 	);
 }

@@ -30,13 +30,13 @@ function Footer(props) {
 				data-bs-toggle='modal'
 				data-bs-target='#contactLink'
 				key={cKey}
-				onClick={doAThing}
+				onClick={setContact}
 			>
 				<FontAwesomeIcon icon={contact.icon} />
 			</div>
 		}
 
-		function doAThing() {
+		function setContact() {
 			setCurrentContact(contact);
 		}
 	});
