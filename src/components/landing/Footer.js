@@ -46,13 +46,7 @@ function Footer(props) {
 			<div className='links d-flex justify-content-center'>
 				{contactAccount}
 			</div>
-			<div className='copyright mt-4'>
-				&copy; 2023&nbsp;
-				<a href='https://ryan-aristosa.github.io/' className='c-eb text-decoration-none'>
-					Ryan Aristosa.
-				</a>
-				&nbsp;All rights reserved.
-			</div>
+			<div className='copyright mt-4'>{props.footer.text}</div>
 			<ContactModal currentContact={currentContact} />
 		</footer>
 	);

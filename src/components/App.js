@@ -13,6 +13,7 @@ function App() {
 	const experiences = GetData('/experience');
 	const projects = GetData('/project');
 	const contacts = GetData('/contact');
+	const footer = GetData('/footer');
 
 	if (
 		navigations.loading
@@ -21,6 +22,7 @@ function App() {
 		|| experiences.loading
 		|| projects.loading
 		|| contacts.loading
+		|| footer.loading
 	) {
 		return <Loading />
 	} else if (
@@ -30,6 +32,7 @@ function App() {
 		|| experiences.error
 		|| projects.error
 		|| contacts.error
+		|| footer.error
 	) {
 		return <Error />
 	}
@@ -43,7 +46,7 @@ function App() {
 				experiences={experiences.response}
 				projects={projects.response}
 			/>
-			<Footer contacts={contacts.response} />
+			<Footer contacts={contacts.response} footer={footer.response} />
 		</div>
 	);
 }
