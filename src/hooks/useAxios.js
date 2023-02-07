@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 
-const UseAxios = (configObj) => {
+const useAxios = (configObj) => {
 	const {
 		axiosInstance,
 		method,
@@ -42,4 +42,4 @@ const UseAxios = (configObj) => {
 	return { response, error, loading, refetch };
 }
 
-export default UseAxios;
+export default useAxios;

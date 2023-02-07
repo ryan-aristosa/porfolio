@@ -1,9 +1,9 @@
-import GetData from 'apis/GetData';
 import Content from 'components/landing/Content';
 import Footer from 'components/landing/Footer';
 import Navigation from 'components/landing/Navigation.js';
 import Error from 'components/Error';
 import Loading from 'components/Loading';
+import GetData from 'hooks/GetData';
 import 'styles/App.scss';
 
 function App() {
