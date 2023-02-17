@@ -1,7 +1,7 @@
 import axios from 'axios';
 import useAxios from 'hooks/useAxios';
 
-const BASE_URL = 'http://localhost:8080';
+const BASE_URL = 'http://localhost:8081';
 
 const createAxios = axios.create({
 	baseURL: BASE_URL,
